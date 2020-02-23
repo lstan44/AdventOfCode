@@ -3,17 +3,19 @@
 #include <string>
 using namespace std;
 
-
-
-int main(){
-    ifstream inputFile("day1_input.txt");
+long int getFuelAmount(ifstream &inputFile){
+    long int sum = 0;
     string file = "";
-
-    int sum = 0;
     while(!inputFile.eof()){
         getline(inputFile,file);
         sum += (stoi(file) /3 ) -2;
     }
 
-    cout<<sum <<endl;
+    return sum;
+}
+int main(){
+    ifstream inputFile("day1_input.txt");
+
+    cout<< getFuelAmount(inputFile) <<endl;
+    
 }
